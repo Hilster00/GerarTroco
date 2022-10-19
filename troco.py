@@ -7,5 +7,5 @@ def troco(valor=0,moedas=[1,5,10,25,50]):
         return 0
     if memo.get(valor) != None:
         return memo[valor]
-    memo[valor]=1+min([troco(valor-i) if valor >= i else float('infinity') for i in moedas])
+    memo[valor]=1+min([troco(valor-i) for i in moedas if valor >= i])
     return memo[valor]
